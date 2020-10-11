@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>名称</th>
+        <th>年龄</th>
+        <th>地址</th>
+        <th>操作</th>
+    </tr>
+    <!-- 遍历输出 -->
+    <#list users as user>
+    <tr>
+        <td id="userID">${user.id}</td>
+        <td>${user.userName}</td>
+        <td>${user.userAge}</td>
+        <td>${user.userAddress}</td>
+        <td>
+            <a href="/user/input/${user.id}">修改</a>
+            <a href="/delete/${user.id}">删除</a>
+        </td>
+    </tr>
+    </#list>
+</table>
+<a href="/user/input/0">新增</a>
+
+</body>
+</html>
